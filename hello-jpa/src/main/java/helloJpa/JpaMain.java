@@ -31,7 +31,15 @@ public class JpaMain {
         Member findMember = em.find(Member.class, 1L);
         findMember.setName("HelloJPA");
 
+        Board findBoard = em.find(Board.class, 1L);
+        System.out.println("findBoard.getId = "+findBoard.getId() );
+        System.out.println("findBoard.getTitle = "+findBoard.getTitle() );
+        System.out.println("findBoard.getContent = "+findBoard.getContent() );
+
+
         tx.commit();
+
+
 
         } catch (Exception e) {
             tx.rollback();
